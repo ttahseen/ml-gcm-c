@@ -11,6 +11,8 @@ This repository contains code to load a TensorFlow model using C, and generate p
 
 ## Instructions
 
+Set up instructions are written to be used on Hypatia UCL Cluster.
+
 ### Setting up libraries and headers
 All header files required for this repository are contained within the `/include` subdirectory. To get `\lib` subdirectory, enter the following into the command line:
 ```
@@ -20,7 +22,6 @@ tar -C . -xzf ${FILENAME}
 ``` 
 
 Then run `./set-env.sh` to set library paths to include local `/lib` subdirectory.
-
 
 ### Loading model
 Alter line 14 of `load_model.c` with the location of the directory containing `saved_model.pb`.
