@@ -2,6 +2,13 @@
 
 This repository contains code to load a TensorFlow model using C, and generate predictions on a dataset.
 
+## Repository Structure
+
+```
+- 639545_tf: Contains trained model
+- data: Contains data in file format <>
+```
+
 ## Instructions
 
 Alter line 14 of `load_model.c` with the location of the directory containing `saved_model.pb`.
