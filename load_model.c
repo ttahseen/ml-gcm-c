@@ -33,4 +33,28 @@ int main()
         printf("%s",TF_Message(Status));
     }
 
+    //****** Get input tensor
+    int NumInputs = 1;
+    TF_Output* Input = malloc(sizeof(TF_Output) * NumInputs);
+
+    TF_Output t0 = {TF_GraphOperationByName(Graph, "serving_default_input_1"), 0};
+    if(t0.oper == NULL)
+        printf("ERROR: Failed TF_GraphOperationByName serving_default_input_1\n");
+    else
+	    printf("TF_GraphOperationByName serving_default_input_1 is OK\n");
+    
+    Input[0] = t0;
+    
+    //********* Get Output tensor
+    int NumOutputs = 1;
+    TF_Output* Output = malloc(sizeof(TF_Output) * NumOutputs);
+
+    TF_Output t2 = {TF_GraphOperationByName(Graph, "StatefulPartitionedCall"), 0};
+    if(t2.oper == NULL)
+        printf("ERROR: Failed TF_GraphOperationByName StatefulPartitionedCall\n");
+    else	
+	printf("TF_GraphOperationByName StatefulPartitionedCall is OK\n");
+    
+    Output[0] = t2;
+
 }

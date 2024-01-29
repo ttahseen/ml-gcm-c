@@ -9,7 +9,6 @@ do
     esac
 done
 
-# srun -p GPU --gres=gpu:1 --pty /bin/bash
 if $CUDA_VISIBLE_DEVICES > 0
     then
         echo "Running on GPU..."
