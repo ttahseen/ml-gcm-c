@@ -57,5 +57,4 @@ int main()
 	printf("TF_GraphOperationByName StatefulPartitionedCall is OK\n");
     
     Output[0] = t2;
-
 }
