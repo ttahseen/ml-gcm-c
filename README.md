@@ -4,11 +4,9 @@ This repository contains code to load a TensorFlow model using C, and generate p
 
 ## Repository Structure
 
-```
-- model: Contains trained model
-- data: Contains data in file format <>
-- utils: Contains `.sh` files which do helpful things
-```
+- `model`: Contains trained model
+- `data`: Contains data in file format <>
+- `utils`: Contains `.sh` files which do helpful things
 
 ## Instructions
 
