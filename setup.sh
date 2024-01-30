@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export TF_ENABLE_ONEDNN_OPTS=0
+export TF_CPP_MIN_LOG_LEVEL=2 # This disables warnings about CPU instructions; TODO: Remove this and address the instructions warnings.
 
 while getopts f: flag
 do
