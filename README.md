@@ -7,6 +7,7 @@ This repository contains code to load a TensorFlow model using C, and generate p
 ```
 - model: Contains trained model
 - data: Contains data in file format <>
+- utils: Contains `.sh` files which do helpful things
 ```
 
 ## Instructions
@@ -21,7 +22,7 @@ wget -q --no-check-certificate https://storage.googleapis.com/tensorflow/libtens
 tar -C . -xzf ${FILENAME}
 ``` 
 
-Then run `./set-env.sh` to set library paths to include local `/lib` subdirectory.
+Then run `./utils/set-env.sh` to set library paths to include local `/lib` subdirectory.
 
 ### Loading model
 
@@ -29,5 +30,5 @@ Alter line 14 of `load_model.c` with the location of the directory containing `s
 
 To load the model, run the following code (written to be used on UCL Hypatia Cluster):
 ```
-./run-setup.sh -f load_model.c
+./run-setup.sh
 ```
