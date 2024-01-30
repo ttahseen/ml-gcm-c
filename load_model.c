@@ -34,17 +34,29 @@ int main()
         printf("%s",TF_Message(Status));
     }
 
-    //****** Get input tensor
-    int NumInputs = 1;
-    TF_Output* Input = malloc(sizeof(TF_Output) * NumInputs);
+    //****** Get main input tensor
+    int NumMainInputs = 1;
+    TF_Output* MainInput = malloc(sizeof(TF_Output) * NumMainInputs);
 
-    TF_Output t0 = {TF_GraphOperationByName(Graph, "serving_default_input_1"), 0};
+    TF_Output t0 = {TF_GraphOperationByName(Graph, "serving_default_inputs_main"), 0};
     if(t0.oper == NULL)
-        printf("ERROR: Failed TF_GraphOperationByName serving_default_input_1\n");
+        printf("ERROR: Failed TF_GraphOperationByName serving_default_inputs_main\n");
     else
-	    printf("TF_GraphOperationByName serving_default_input_1 is OK\n");
+	    printf("TF_GraphOperationByName serving_default_inputs_main is OK\n");
     
-    Input[0] = t0;
+    MainInput[0] = t0;
+
+    //****** Get aux input tensor
+    int NumAuxInputs = 1;
+    TF_Output* AuxInput = malloc(sizeof(TF_Output) * NumAuxInputs);
+
+    TF_Output t1 = {TF_GraphOperationByName(Graph, "serving_default_inputs_aux"), 0};
+    if(t1.oper == NULL)
+        printf("ERROR: Failed TF_GraphOperationByName serving_default_inputs_aux\n");
+    else
+	    printf("TF_GraphOperationByName serving_default_inputs_aux is OK\n");
+    
+    AuxInput[0] = t1;
     
     //********* Get Output tensor
     int NumOutputs = 1;
