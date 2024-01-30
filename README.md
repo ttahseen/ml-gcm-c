@@ -30,3 +30,10 @@ To load the model, run the following code (written to be used on UCL Hypatia Clu
 ```
 ./run-setup.sh
 ```
+
+### TODO:
+
+- Ensure that TensorFlow installation is actually using the GPU (remove `export TF_CPP_MIN_LOG_LEVEL=2` in `./utils/setup.sh` to enable instruction warnings).
+- Load test_X and test_Y data into program
+- Use model to generate output prediction tensors
+- Save output prediction tensors
