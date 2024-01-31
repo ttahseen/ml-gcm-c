@@ -8,6 +8,7 @@ This repository contains code to load a TensorFlow model using C, and generate p
 - `data`: Contains input data
 - `utils`: Contains `.sh` files which do helpful things
 - `include`: Contains header files
+- `.vscode`: Contains settings for Visual Studio Code 
 
 ## Instructions
 
